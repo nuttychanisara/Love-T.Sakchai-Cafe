@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="15d64a6db5324d1299ed475f815f1006" Name="Diagram1">
+        <EntityTypeShape EntityType="MycafeDBModel.ConfirmOrder_" Width="1.5" PointX="9.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Employee_" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.EmpPosition_" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Expenses_" Width="1.5" PointX="14.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Material_" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Menu_" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Order_" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Payment_" Width="1.5" PointX="12" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.PurchaseOrder_" Width="1.5" PointX="9.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Quotation_" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Receipt_" Width="1.5" PointX="14.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.ReceiptOrder_" Width="1.5" PointX="12" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.Revenue_" Width="1.5" PointX="16.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MycafeDBModel.TypeMenu_" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="MycafeDBModel.FK_ConfirmOrder__Order_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Payment__ConfirmOrder_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Employee__EmpPosition_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Material__Employee_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Menu__Employee_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Expenses__ReceiptOrder_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Quotation__Material_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Menu__TypeMenu_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Order__Menu_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Receipt__Payment_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_PurchaseOrder__Quotation_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_ReceiptOrder__PurchaseOrder_" ManuallyRouted="false" />
+        <AssociationConnector Association="MycafeDBModel.FK_Revenue__Receipt_" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

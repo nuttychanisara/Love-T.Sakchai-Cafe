@@ -1,0 +1,1031 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MycafeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ConfirmOrder$">
+          <Key>
+            <PropertyRef Name="CfOrderId " />
+          </Key>
+          <Property Name="CfOrderId " Type="float" Nullable="false" />
+          <Property Name="OrderId " Type="float" />
+          <Property Name="CfOrderMenu " Type="nvarchar" MaxLength="255" />
+          <Property Name="CfOrderTime " Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee$">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="float" Nullable="false" />
+          <Property Name="EmpName" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmpLName" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmpPoId" Type="int" Nullable="false" />
+          <Property Name="EmpTel" Type="varchar" MaxLength="50" />
+          <Property Name="EmpHnum" Type="float" />
+          <Property Name="EmpSoi" Type="float" />
+          <Property Name="EmpMoo" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmpRoad" Type="nvarchar" MaxLength="255" />
+          <Property Name="SareaName" Type="varchar" MaxLength="50" />
+          <Property Name="DareaName" Type="varchar" MaxLength="50" />
+          <Property Name="ProvinceName" Type="varchar" MaxLength="50" />
+          <Property Name="EmpPostal" Type="float" />
+          <Property Name="EmpPassword" Type="float" />
+        </EntityType>
+        <EntityType Name="EmpPosition$">
+          <Key>
+            <PropertyRef Name="EmpPoId" />
+          </Key>
+          <Property Name="EmpPoId" Type="int" Nullable="false" />
+          <Property Name="EmpPosition" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpSalary" Type="int" />
+        </EntityType>
+        <EntityType Name="Expenses$">
+          <Key>
+            <PropertyRef Name="ExId " />
+          </Key>
+          <Property Name="ExId " Type="float" Nullable="false" />
+          <Property Name="ROrderId " Type="float" Nullable="false" />
+          <Property Name="ExName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ExLName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Material$">
+          <Key>
+            <PropertyRef Name="MatId " />
+          </Key>
+          <Property Name="MatId " Type="float" Nullable="false" />
+          <Property Name="EmpId " Type="float" Nullable="false" />
+          <Property Name="MatDate " Type="datetime" />
+          <Property Name="MatList " Type="nvarchar" MaxLength="255" />
+          <Property Name="MatUnit" Type="nvarchar" MaxLength="255" />
+          <Property Name="MatPrice " Type="float" />
+        </EntityType>
+        <EntityType Name="Menu$">
+          <Key>
+            <PropertyRef Name="MenuId " />
+          </Key>
+          <Property Name="MenuId " Type="float" Nullable="false" />
+          <Property Name="TMenuId " Type="float" />
+          <Property Name="EmpId " Type="float" />
+          <Property Name="MenuName " Type="nvarchar" MaxLength="255" />
+          <Property Name="MenuPrice " Type="float" />
+        </EntityType>
+        <EntityType Name="Order$">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="float" Nullable="false" />
+          <Property Name="MenuId " Type="float" />
+          <Property Name="OrderUnit " Type="float" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="OrderTime " Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Payment$">
+          <Key>
+            <PropertyRef Name="PayId " />
+          </Key>
+          <Property Name="PayId " Type="float" Nullable="false" />
+          <Property Name="CfOrderId " Type="float" Nullable="false" />
+          <Property Name="PayDate " Type="datetime" />
+          <Property Name="PayTime " Type="varchar" MaxLength="50" />
+          <Property Name="PayName " Type="nvarchar" MaxLength="255" />
+          <Property Name="PayLName " Type="nvarchar" MaxLength="255" />
+          <Property Name="PayAmount " Type="float" />
+          <Property Name="PayStatus " Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="PurchaseOrder$">
+          <Key>
+            <PropertyRef Name="POrderId " />
+          </Key>
+          <Property Name="POrderId " Type="float" Nullable="false" />
+          <Property Name="QuoId " Type="float" />
+          <Property Name="POrderName " Type="nvarchar" MaxLength="255" />
+          <Property Name="POrderLName " Type="nvarchar" MaxLength="255" />
+          <Property Name="POrderDate " Type="datetime" />
+        </EntityType>
+        <EntityType Name="Quotation$">
+          <Key>
+            <PropertyRef Name="QuoId" />
+          </Key>
+          <Property Name="QuoId" Type="float" Nullable="false" />
+          <Property Name="MatId " Type="float" />
+          <Property Name="QuoName " Type="nvarchar" MaxLength="255" />
+          <Property Name="QuoLName " Type="nvarchar" MaxLength="255" />
+          <Property Name="QuoTel " Type="float" />
+          <Property Name="QuoShopName " Type="nvarchar" MaxLength="255" />
+          <Property Name="QuoHnum " Type="nvarchar" MaxLength="255" />
+          <Property Name="QuoSoi " Type="float" />
+          <Property Name="QuoMoo " Type="nvarchar" MaxLength="255" />
+          <Property Name="QuoRoad " Type="nvarchar" MaxLength="255" />
+          <Property Name="SareaId" Type="text" />
+          <Property Name="DareaId" Type="varchar" MaxLength="50" />
+          <Property Name="ProvinceId" Type="varchar" MaxLength="50" />
+          <Property Name="QuoPostal " Type="float" />
+        </EntityType>
+        <EntityType Name="Receipt$">
+          <Key>
+            <PropertyRef Name="RecId " />
+          </Key>
+          <Property Name="RecId " Type="float" Nullable="false" />
+          <Property Name="PayId " Type="float" />
+          <Property Name="RecDate " Type="datetime" />
+          <Property Name="RecName " Type="nvarchar" MaxLength="255" />
+          <Property Name="RecLName " Type="nvarchar" MaxLength="255" />
+          <Property Name="RecTime " Type="varchar" MaxLength="50" />
+          <Property Name="RecAmount " Type="float" />
+        </EntityType>
+        <EntityType Name="ReceiptOrder$">
+          <Key>
+            <PropertyRef Name="ROrderId " />
+          </Key>
+          <Property Name="ROrderId " Type="float" Nullable="false" />
+          <Property Name="POrderId " Type="float" />
+          <Property Name="ROrderName " Type="nvarchar" MaxLength="255" />
+          <Property Name="ROrderLName " Type="nvarchar" MaxLength="255" />
+          <Property Name="RorderDate " Type="datetime" />
+        </EntityType>
+        <EntityType Name="Revenue$">
+          <Key>
+            <PropertyRef Name="RevId " />
+          </Key>
+          <Property Name="RevId " Type="float" Nullable="false" />
+          <Property Name="RecId " Type="float" />
+          <Property Name="RevName " Type="nvarchar" MaxLength="255" />
+          <Property Name="RevLName " Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeMenu$">
+          <Key>
+            <PropertyRef Name="TMenuId " />
+          </Key>
+          <Property Name="TMenuId " Type="float" Nullable="false" />
+          <Property Name="TMenuName " Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_ConfirmOrder$_Order$">
+          <End Role="Order$" Type="Self.Order$" Multiplicity="0..1" />
+          <End Role="ConfirmOrder$" Type="Self.ConfirmOrder$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order$">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="ConfirmOrder$">
+              <PropertyRef Name="OrderId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee$_EmpPosition$">
+          <End Role="EmpPosition$" Type="Self.EmpPosition$" Multiplicity="1" />
+          <End Role="Employee$" Type="Self.Employee$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpPosition$">
+              <PropertyRef Name="EmpPoId" />
+            </Principal>
+            <Dependent Role="Employee$">
+              <PropertyRef Name="EmpPoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expenses$_ReceiptOrder$">
+          <End Role="ReceiptOrder$" Type="Self.ReceiptOrder$" Multiplicity="1" />
+          <End Role="Expenses$" Type="Self.Expenses$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReceiptOrder$">
+              <PropertyRef Name="ROrderId " />
+            </Principal>
+            <Dependent Role="Expenses$">
+              <PropertyRef Name="ROrderId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material$_Employee$">
+          <End Role="Employee$" Type="Self.Employee$" Multiplicity="1" />
+          <End Role="Material$" Type="Self.Material$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee$">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="Material$">
+              <PropertyRef Name="EmpId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu$_Employee$">
+          <End Role="Employee$" Type="Self.Employee$" Multiplicity="0..1" />
+          <End Role="Menu$" Type="Self.Menu$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee$">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="Menu$">
+              <PropertyRef Name="EmpId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu$_TypeMenu$">
+          <End Role="TypeMenu$" Type="Self.TypeMenu$" Multiplicity="0..1" />
+          <End Role="Menu$" Type="Self.Menu$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeMenu$">
+              <PropertyRef Name="TMenuId " />
+            </Principal>
+            <Dependent Role="Menu$">
+              <PropertyRef Name="TMenuId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order$_Menu$">
+          <End Role="Menu$" Type="Self.Menu$" Multiplicity="0..1" />
+          <End Role="Order$" Type="Self.Order$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu$">
+              <PropertyRef Name="MenuId " />
+            </Principal>
+            <Dependent Role="Order$">
+              <PropertyRef Name="MenuId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment$_ConfirmOrder$">
+          <End Role="ConfirmOrder$" Type="Self.ConfirmOrder$" Multiplicity="1" />
+          <End Role="Payment$" Type="Self.Payment$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfirmOrder$">
+              <PropertyRef Name="CfOrderId " />
+            </Principal>
+            <Dependent Role="Payment$">
+              <PropertyRef Name="CfOrderId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrder$_Quotation$">
+          <End Role="Quotation$" Type="Self.Quotation$" Multiplicity="0..1" />
+          <End Role="PurchaseOrder$" Type="Self.PurchaseOrder$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quotation$">
+              <PropertyRef Name="QuoId" />
+            </Principal>
+            <Dependent Role="PurchaseOrder$">
+              <PropertyRef Name="QuoId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quotation$_Material$">
+          <End Role="Material$" Type="Self.Material$" Multiplicity="0..1" />
+          <End Role="Quotation$" Type="Self.Quotation$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material$">
+              <PropertyRef Name="MatId " />
+            </Principal>
+            <Dependent Role="Quotation$">
+              <PropertyRef Name="MatId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receipt$_Payment$">
+          <End Role="Payment$" Type="Self.Payment$" Multiplicity="0..1" />
+          <End Role="Receipt$" Type="Self.Receipt$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment$">
+              <PropertyRef Name="PayId " />
+            </Principal>
+            <Dependent Role="Receipt$">
+              <PropertyRef Name="PayId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReceiptOrder$_PurchaseOrder$">
+          <End Role="PurchaseOrder$" Type="Self.PurchaseOrder$" Multiplicity="0..1" />
+          <End Role="ReceiptOrder$" Type="Self.ReceiptOrder$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrder$">
+              <PropertyRef Name="POrderId " />
+            </Principal>
+            <Dependent Role="ReceiptOrder$">
+              <PropertyRef Name="POrderId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Revenue$_Receipt$">
+          <End Role="Receipt$" Type="Self.Receipt$" Multiplicity="0..1" />
+          <End Role="Revenue$" Type="Self.Revenue$" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt$">
+              <PropertyRef Name="RecId " />
+            </Principal>
+            <Dependent Role="Revenue$">
+              <PropertyRef Name="RecId " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MycafeDBModelStoreContainer">
+          <EntitySet Name="ConfirmOrder$" EntityType="Self.ConfirmOrder$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee$" EntityType="Self.Employee$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpPosition$" EntityType="Self.EmpPosition$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expenses$" EntityType="Self.Expenses$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material$" EntityType="Self.Material$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu$" EntityType="Self.Menu$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order$" EntityType="Self.Order$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment$" EntityType="Self.Payment$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchaseOrder$" EntityType="Self.PurchaseOrder$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quotation$" EntityType="Self.Quotation$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Receipt$" EntityType="Self.Receipt$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReceiptOrder$" EntityType="Self.ReceiptOrder$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Revenue$" EntityType="Self.Revenue$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeMenu$" EntityType="Self.TypeMenu$" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ConfirmOrder$_Order$" Association="Self.FK_ConfirmOrder$_Order$">
+            <End Role="Order$" EntitySet="Order$" />
+            <End Role="ConfirmOrder$" EntitySet="ConfirmOrder$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee$_EmpPosition$" Association="Self.FK_Employee$_EmpPosition$">
+            <End Role="EmpPosition$" EntitySet="EmpPosition$" />
+            <End Role="Employee$" EntitySet="Employee$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expenses$_ReceiptOrder$" Association="Self.FK_Expenses$_ReceiptOrder$">
+            <End Role="ReceiptOrder$" EntitySet="ReceiptOrder$" />
+            <End Role="Expenses$" EntitySet="Expenses$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material$_Employee$" Association="Self.FK_Material$_Employee$">
+            <End Role="Employee$" EntitySet="Employee$" />
+            <End Role="Material$" EntitySet="Material$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu$_Employee$" Association="Self.FK_Menu$_Employee$">
+            <End Role="Employee$" EntitySet="Employee$" />
+            <End Role="Menu$" EntitySet="Menu$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu$_TypeMenu$" Association="Self.FK_Menu$_TypeMenu$">
+            <End Role="TypeMenu$" EntitySet="TypeMenu$" />
+            <End Role="Menu$" EntitySet="Menu$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order$_Menu$" Association="Self.FK_Order$_Menu$">
+            <End Role="Menu$" EntitySet="Menu$" />
+            <End Role="Order$" EntitySet="Order$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment$_ConfirmOrder$" Association="Self.FK_Payment$_ConfirmOrder$">
+            <End Role="ConfirmOrder$" EntitySet="ConfirmOrder$" />
+            <End Role="Payment$" EntitySet="Payment$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrder$_Quotation$" Association="Self.FK_PurchaseOrder$_Quotation$">
+            <End Role="Quotation$" EntitySet="Quotation$" />
+            <End Role="PurchaseOrder$" EntitySet="PurchaseOrder$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quotation$_Material$" Association="Self.FK_Quotation$_Material$">
+            <End Role="Material$" EntitySet="Material$" />
+            <End Role="Quotation$" EntitySet="Quotation$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receipt$_Payment$" Association="Self.FK_Receipt$_Payment$">
+            <End Role="Payment$" EntitySet="Payment$" />
+            <End Role="Receipt$" EntitySet="Receipt$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceiptOrder$_PurchaseOrder$" Association="Self.FK_ReceiptOrder$_PurchaseOrder$">
+            <End Role="PurchaseOrder$" EntitySet="PurchaseOrder$" />
+            <End Role="ReceiptOrder$" EntitySet="ReceiptOrder$" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Revenue$_Receipt$" Association="Self.FK_Revenue$_Receipt$">
+            <End Role="Receipt$" EntitySet="Receipt$" />
+            <End Role="Revenue$" EntitySet="Revenue$" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MycafeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ConfirmOrder_">
+          <Key>
+            <PropertyRef Name="CfOrderId_" />
+          </Key>
+          <Property Name="CfOrderId_" Type="Double" Nullable="false" />
+          <Property Name="OrderId_" Type="Double" />
+          <Property Name="CfOrderMenu_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CfOrderTime_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Order_" Relationship="Self.FK_ConfirmOrder__Order_" FromRole="ConfirmOrder_" ToRole="Order_" />
+          <NavigationProperty Name="Payment_" Relationship="Self.FK_Payment__ConfirmOrder_" FromRole="ConfirmOrder_" ToRole="Payment_" />
+        </EntityType>
+        <EntityType Name="Employee_">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="Double" Nullable="false" />
+          <Property Name="EmpName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmpLName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmpPoId" Type="Int32" Nullable="false" />
+          <Property Name="EmpTel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmpHnum" Type="Double" />
+          <Property Name="EmpSoi" Type="Double" />
+          <Property Name="EmpMoo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmpRoad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SareaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DareaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProvinceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmpPostal" Type="Double" />
+          <Property Name="EmpPassword" Type="Double" />
+          <NavigationProperty Name="EmpPosition_" Relationship="Self.FK_Employee__EmpPosition_" FromRole="Employee_" ToRole="EmpPosition_" />
+          <NavigationProperty Name="Material_" Relationship="Self.FK_Material__Employee_" FromRole="Employee_" ToRole="Material_" />
+          <NavigationProperty Name="Menu_" Relationship="Self.FK_Menu__Employee_" FromRole="Employee_" ToRole="Menu_" />
+        </EntityType>
+        <EntityType Name="EmpPosition_">
+          <Key>
+            <PropertyRef Name="EmpPoId" />
+          </Key>
+          <Property Name="EmpPoId" Type="Int32" Nullable="false" />
+          <Property Name="EmpPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpSalary" Type="Int32" />
+          <NavigationProperty Name="Employee_" Relationship="Self.FK_Employee__EmpPosition_" FromRole="EmpPosition_" ToRole="Employee_" />
+        </EntityType>
+        <EntityType Name="Expenses_">
+          <Key>
+            <PropertyRef Name="ExId_" />
+          </Key>
+          <Property Name="ExId_" Type="Double" Nullable="false" />
+          <Property Name="ROrderId_" Type="Double" Nullable="false" />
+          <Property Name="ExName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ExLName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ReceiptOrder_" Relationship="Self.FK_Expenses__ReceiptOrder_" FromRole="Expenses_" ToRole="ReceiptOrder_" />
+        </EntityType>
+        <EntityType Name="Material_">
+          <Key>
+            <PropertyRef Name="MatId_" />
+          </Key>
+          <Property Name="MatId_" Type="Double" Nullable="false" />
+          <Property Name="EmpId_" Type="Double" Nullable="false" />
+          <Property Name="MatDate_" Type="DateTime" Precision="3" />
+          <Property Name="MatList_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MatUnit" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MatPrice_" Type="Double" />
+          <NavigationProperty Name="Employee_" Relationship="Self.FK_Material__Employee_" FromRole="Material_" ToRole="Employee_" />
+          <NavigationProperty Name="Quotation_" Relationship="Self.FK_Quotation__Material_" FromRole="Material_" ToRole="Quotation_" />
+        </EntityType>
+        <EntityType Name="Menu_">
+          <Key>
+            <PropertyRef Name="MenuId_" />
+          </Key>
+          <Property Name="MenuId_" Type="Double" Nullable="false" />
+          <Property Name="TMenuId_" Type="Double" />
+          <Property Name="EmpId_" Type="Double" />
+          <Property Name="MenuName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MenuPrice_" Type="Double" />
+          <NavigationProperty Name="Employee_" Relationship="Self.FK_Menu__Employee_" FromRole="Menu_" ToRole="Employee_" />
+          <NavigationProperty Name="TypeMenu_" Relationship="Self.FK_Menu__TypeMenu_" FromRole="Menu_" ToRole="TypeMenu_" />
+          <NavigationProperty Name="Order_" Relationship="Self.FK_Order__Menu_" FromRole="Menu_" ToRole="Order_" />
+        </EntityType>
+        <EntityType Name="Order_">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Double" Nullable="false" />
+          <Property Name="MenuId_" Type="Double" />
+          <Property Name="OrderUnit_" Type="Double" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderTime_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ConfirmOrder_" Relationship="Self.FK_ConfirmOrder__Order_" FromRole="Order_" ToRole="ConfirmOrder_" />
+          <NavigationProperty Name="Menu_" Relationship="Self.FK_Order__Menu_" FromRole="Order_" ToRole="Menu_" />
+        </EntityType>
+        <EntityType Name="Payment_">
+          <Key>
+            <PropertyRef Name="PayId_" />
+          </Key>
+          <Property Name="PayId_" Type="Double" Nullable="false" />
+          <Property Name="CfOrderId_" Type="Double" Nullable="false" />
+          <Property Name="PayDate_" Type="DateTime" Precision="3" />
+          <Property Name="PayTime_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PayName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PayLName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PayAmount_" Type="Double" />
+          <Property Name="PayStatus_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ConfirmOrder_" Relationship="Self.FK_Payment__ConfirmOrder_" FromRole="Payment_" ToRole="ConfirmOrder_" />
+          <NavigationProperty Name="Receipt_" Relationship="Self.FK_Receipt__Payment_" FromRole="Payment_" ToRole="Receipt_" />
+        </EntityType>
+        <EntityType Name="PurchaseOrder_">
+          <Key>
+            <PropertyRef Name="POrderId_" />
+          </Key>
+          <Property Name="POrderId_" Type="Double" Nullable="false" />
+          <Property Name="QuoId_" Type="Double" />
+          <Property Name="POrderName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="POrderLName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="POrderDate_" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Quotation_" Relationship="Self.FK_PurchaseOrder__Quotation_" FromRole="PurchaseOrder_" ToRole="Quotation_" />
+          <NavigationProperty Name="ReceiptOrder_" Relationship="Self.FK_ReceiptOrder__PurchaseOrder_" FromRole="PurchaseOrder_" ToRole="ReceiptOrder_" />
+        </EntityType>
+        <EntityType Name="Quotation_">
+          <Key>
+            <PropertyRef Name="QuoId" />
+          </Key>
+          <Property Name="QuoId" Type="Double" Nullable="false" />
+          <Property Name="MatId_" Type="Double" />
+          <Property Name="QuoName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="QuoLName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="QuoTel_" Type="Double" />
+          <Property Name="QuoShopName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="QuoHnum_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="QuoSoi_" Type="Double" />
+          <Property Name="QuoMoo_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="QuoRoad_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SareaId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DareaId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProvinceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QuoPostal_" Type="Double" />
+          <NavigationProperty Name="Material_" Relationship="Self.FK_Quotation__Material_" FromRole="Quotation_" ToRole="Material_" />
+          <NavigationProperty Name="PurchaseOrder_" Relationship="Self.FK_PurchaseOrder__Quotation_" FromRole="Quotation_" ToRole="PurchaseOrder_" />
+        </EntityType>
+        <EntityType Name="Receipt_">
+          <Key>
+            <PropertyRef Name="RecId_" />
+          </Key>
+          <Property Name="RecId_" Type="Double" Nullable="false" />
+          <Property Name="PayId_" Type="Double" />
+          <Property Name="RecDate_" Type="DateTime" Precision="3" />
+          <Property Name="RecName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RecLName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RecTime_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RecAmount_" Type="Double" />
+          <NavigationProperty Name="Payment_" Relationship="Self.FK_Receipt__Payment_" FromRole="Receipt_" ToRole="Payment_" />
+          <NavigationProperty Name="Revenue_" Relationship="Self.FK_Revenue__Receipt_" FromRole="Receipt_" ToRole="Revenue_" />
+        </EntityType>
+        <EntityType Name="ReceiptOrder_">
+          <Key>
+            <PropertyRef Name="ROrderId_" />
+          </Key>
+          <Property Name="ROrderId_" Type="Double" Nullable="false" />
+          <Property Name="POrderId_" Type="Double" />
+          <Property Name="ROrderName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ROrderLName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RorderDate_" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Expenses_" Relationship="Self.FK_Expenses__ReceiptOrder_" FromRole="ReceiptOrder_" ToRole="Expenses_" />
+          <NavigationProperty Name="PurchaseOrder_" Relationship="Self.FK_ReceiptOrder__PurchaseOrder_" FromRole="ReceiptOrder_" ToRole="PurchaseOrder_" />
+        </EntityType>
+        <EntityType Name="Revenue_">
+          <Key>
+            <PropertyRef Name="RevId_" />
+          </Key>
+          <Property Name="RevId_" Type="Double" Nullable="false" />
+          <Property Name="RecId_" Type="Double" />
+          <Property Name="RevName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RevLName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Receipt_" Relationship="Self.FK_Revenue__Receipt_" FromRole="Revenue_" ToRole="Receipt_" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypeMenu_">
+          <Key>
+            <PropertyRef Name="TMenuId_" />
+          </Key>
+          <Property Name="TMenuId_" Type="Double" Nullable="false" />
+          <Property Name="TMenuName_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Menu_" Relationship="Self.FK_Menu__TypeMenu_" FromRole="TypeMenu_" ToRole="Menu_" />
+        </EntityType>
+        <Association Name="FK_ConfirmOrder__Order_">
+          <End Role="Order_" Type="Self.Order_" Multiplicity="0..1" />
+          <End Role="ConfirmOrder_" Type="Self.ConfirmOrder_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="ConfirmOrder_">
+              <PropertyRef Name="OrderId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment__ConfirmOrder_">
+          <End Role="ConfirmOrder_" Type="Self.ConfirmOrder_" Multiplicity="1" />
+          <End Role="Payment_" Type="Self.Payment_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfirmOrder_">
+              <PropertyRef Name="CfOrderId_" />
+            </Principal>
+            <Dependent Role="Payment_">
+              <PropertyRef Name="CfOrderId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee__EmpPosition_">
+          <End Role="EmpPosition_" Type="Self.EmpPosition_" Multiplicity="1" />
+          <End Role="Employee_" Type="Self.Employee_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpPosition_">
+              <PropertyRef Name="EmpPoId" />
+            </Principal>
+            <Dependent Role="Employee_">
+              <PropertyRef Name="EmpPoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material__Employee_">
+          <End Role="Employee_" Type="Self.Employee_" Multiplicity="1" />
+          <End Role="Material_" Type="Self.Material_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="Material_">
+              <PropertyRef Name="EmpId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu__Employee_">
+          <End Role="Employee_" Type="Self.Employee_" Multiplicity="0..1" />
+          <End Role="Menu_" Type="Self.Menu_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="Menu_">
+              <PropertyRef Name="EmpId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expenses__ReceiptOrder_">
+          <End Role="ReceiptOrder_" Type="Self.ReceiptOrder_" Multiplicity="1" />
+          <End Role="Expenses_" Type="Self.Expenses_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReceiptOrder_">
+              <PropertyRef Name="ROrderId_" />
+            </Principal>
+            <Dependent Role="Expenses_">
+              <PropertyRef Name="ROrderId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quotation__Material_">
+          <End Role="Material_" Type="Self.Material_" Multiplicity="0..1" />
+          <End Role="Quotation_" Type="Self.Quotation_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material_">
+              <PropertyRef Name="MatId_" />
+            </Principal>
+            <Dependent Role="Quotation_">
+              <PropertyRef Name="MatId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu__TypeMenu_">
+          <End Role="TypeMenu_" Type="Self.TypeMenu_" Multiplicity="0..1" />
+          <End Role="Menu_" Type="Self.Menu_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeMenu_">
+              <PropertyRef Name="TMenuId_" />
+            </Principal>
+            <Dependent Role="Menu_">
+              <PropertyRef Name="TMenuId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order__Menu_">
+          <End Role="Menu_" Type="Self.Menu_" Multiplicity="0..1" />
+          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu_">
+              <PropertyRef Name="MenuId_" />
+            </Principal>
+            <Dependent Role="Order_">
+              <PropertyRef Name="MenuId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receipt__Payment_">
+          <End Role="Payment_" Type="Self.Payment_" Multiplicity="0..1" />
+          <End Role="Receipt_" Type="Self.Receipt_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment_">
+              <PropertyRef Name="PayId_" />
+            </Principal>
+            <Dependent Role="Receipt_">
+              <PropertyRef Name="PayId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrder__Quotation_">
+          <End Role="Quotation_" Type="Self.Quotation_" Multiplicity="0..1" />
+          <End Role="PurchaseOrder_" Type="Self.PurchaseOrder_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quotation_">
+              <PropertyRef Name="QuoId" />
+            </Principal>
+            <Dependent Role="PurchaseOrder_">
+              <PropertyRef Name="QuoId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReceiptOrder__PurchaseOrder_">
+          <End Role="PurchaseOrder_" Type="Self.PurchaseOrder_" Multiplicity="0..1" />
+          <End Role="ReceiptOrder_" Type="Self.ReceiptOrder_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrder_">
+              <PropertyRef Name="POrderId_" />
+            </Principal>
+            <Dependent Role="ReceiptOrder_">
+              <PropertyRef Name="POrderId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Revenue__Receipt_">
+          <End Role="Receipt_" Type="Self.Receipt_" Multiplicity="0..1" />
+          <End Role="Revenue_" Type="Self.Revenue_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt_">
+              <PropertyRef Name="RecId_" />
+            </Principal>
+            <Dependent Role="Revenue_">
+              <PropertyRef Name="RecId_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MycafeDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ConfirmOrder_" EntityType="Self.ConfirmOrder_" />
+          <EntitySet Name="Employee_" EntityType="Self.Employee_" />
+          <EntitySet Name="EmpPosition_" EntityType="Self.EmpPosition_" />
+          <EntitySet Name="Expenses_" EntityType="Self.Expenses_" />
+          <EntitySet Name="Material_" EntityType="Self.Material_" />
+          <EntitySet Name="Menu_" EntityType="Self.Menu_" />
+          <EntitySet Name="Order_" EntityType="Self.Order_" />
+          <EntitySet Name="Payment_" EntityType="Self.Payment_" />
+          <EntitySet Name="PurchaseOrder_" EntityType="Self.PurchaseOrder_" />
+          <EntitySet Name="Quotation_" EntityType="Self.Quotation_" />
+          <EntitySet Name="Receipt_" EntityType="Self.Receipt_" />
+          <EntitySet Name="ReceiptOrder_" EntityType="Self.ReceiptOrder_" />
+          <EntitySet Name="Revenue_" EntityType="Self.Revenue_" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TypeMenu_" EntityType="Self.TypeMenu_" />
+          <AssociationSet Name="FK_ConfirmOrder__Order_" Association="Self.FK_ConfirmOrder__Order_">
+            <End Role="Order_" EntitySet="Order_" />
+            <End Role="ConfirmOrder_" EntitySet="ConfirmOrder_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment__ConfirmOrder_" Association="Self.FK_Payment__ConfirmOrder_">
+            <End Role="ConfirmOrder_" EntitySet="ConfirmOrder_" />
+            <End Role="Payment_" EntitySet="Payment_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee__EmpPosition_" Association="Self.FK_Employee__EmpPosition_">
+            <End Role="EmpPosition_" EntitySet="EmpPosition_" />
+            <End Role="Employee_" EntitySet="Employee_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material__Employee_" Association="Self.FK_Material__Employee_">
+            <End Role="Employee_" EntitySet="Employee_" />
+            <End Role="Material_" EntitySet="Material_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu__Employee_" Association="Self.FK_Menu__Employee_">
+            <End Role="Employee_" EntitySet="Employee_" />
+            <End Role="Menu_" EntitySet="Menu_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expenses__ReceiptOrder_" Association="Self.FK_Expenses__ReceiptOrder_">
+            <End Role="ReceiptOrder_" EntitySet="ReceiptOrder_" />
+            <End Role="Expenses_" EntitySet="Expenses_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quotation__Material_" Association="Self.FK_Quotation__Material_">
+            <End Role="Material_" EntitySet="Material_" />
+            <End Role="Quotation_" EntitySet="Quotation_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu__TypeMenu_" Association="Self.FK_Menu__TypeMenu_">
+            <End Role="TypeMenu_" EntitySet="TypeMenu_" />
+            <End Role="Menu_" EntitySet="Menu_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order__Menu_" Association="Self.FK_Order__Menu_">
+            <End Role="Menu_" EntitySet="Menu_" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receipt__Payment_" Association="Self.FK_Receipt__Payment_">
+            <End Role="Payment_" EntitySet="Payment_" />
+            <End Role="Receipt_" EntitySet="Receipt_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrder__Quotation_" Association="Self.FK_PurchaseOrder__Quotation_">
+            <End Role="Quotation_" EntitySet="Quotation_" />
+            <End Role="PurchaseOrder_" EntitySet="PurchaseOrder_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceiptOrder__PurchaseOrder_" Association="Self.FK_ReceiptOrder__PurchaseOrder_">
+            <End Role="PurchaseOrder_" EntitySet="PurchaseOrder_" />
+            <End Role="ReceiptOrder_" EntitySet="ReceiptOrder_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Revenue__Receipt_" Association="Self.FK_Revenue__Receipt_">
+            <End Role="Receipt_" EntitySet="Receipt_" />
+            <End Role="Revenue_" EntitySet="Revenue_" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MycafeDBModelStoreContainer" CdmEntityContainer="MycafeDBEntities">
+          <EntitySetMapping Name="ConfirmOrder_">
+            <EntityTypeMapping TypeName="MycafeDBModel.ConfirmOrder_">
+              <MappingFragment StoreEntitySet="ConfirmOrder$">
+                <ScalarProperty Name="CfOrderId_" ColumnName="CfOrderId " />
+                <ScalarProperty Name="OrderId_" ColumnName="OrderId " />
+                <ScalarProperty Name="CfOrderMenu_" ColumnName="CfOrderMenu " />
+                <ScalarProperty Name="CfOrderTime_" ColumnName="CfOrderTime " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Employee_">
+              <MappingFragment StoreEntitySet="Employee$">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpLName" ColumnName="EmpLName" />
+                <ScalarProperty Name="EmpPoId" ColumnName="EmpPoId" />
+                <ScalarProperty Name="EmpTel" ColumnName="EmpTel" />
+                <ScalarProperty Name="EmpHnum" ColumnName="EmpHnum" />
+                <ScalarProperty Name="EmpSoi" ColumnName="EmpSoi" />
+                <ScalarProperty Name="EmpMoo" ColumnName="EmpMoo" />
+                <ScalarProperty Name="EmpRoad" ColumnName="EmpRoad" />
+                <ScalarProperty Name="SareaName" ColumnName="SareaName" />
+                <ScalarProperty Name="DareaName" ColumnName="DareaName" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+                <ScalarProperty Name="EmpPostal" ColumnName="EmpPostal" />
+                <ScalarProperty Name="EmpPassword" ColumnName="EmpPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpPosition_">
+            <EntityTypeMapping TypeName="MycafeDBModel.EmpPosition_">
+              <MappingFragment StoreEntitySet="EmpPosition$">
+                <ScalarProperty Name="EmpPoId" ColumnName="EmpPoId" />
+                <ScalarProperty Name="EmpPosition" ColumnName="EmpPosition" />
+                <ScalarProperty Name="EmpSalary" ColumnName="EmpSalary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expenses_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Expenses_">
+              <MappingFragment StoreEntitySet="Expenses$">
+                <ScalarProperty Name="ExId_" ColumnName="ExId " />
+                <ScalarProperty Name="ROrderId_" ColumnName="ROrderId " />
+                <ScalarProperty Name="ExName" ColumnName="ExName" />
+                <ScalarProperty Name="ExLName" ColumnName="ExLName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Material_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Material_">
+              <MappingFragment StoreEntitySet="Material$">
+                <ScalarProperty Name="MatId_" ColumnName="MatId " />
+                <ScalarProperty Name="EmpId_" ColumnName="EmpId " />
+                <ScalarProperty Name="MatDate_" ColumnName="MatDate " />
+                <ScalarProperty Name="MatList_" ColumnName="MatList " />
+                <ScalarProperty Name="MatUnit" ColumnName="MatUnit" />
+                <ScalarProperty Name="MatPrice_" ColumnName="MatPrice " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Menu_">
+              <MappingFragment StoreEntitySet="Menu$">
+                <ScalarProperty Name="MenuId_" ColumnName="MenuId " />
+                <ScalarProperty Name="TMenuId_" ColumnName="TMenuId " />
+                <ScalarProperty Name="EmpId_" ColumnName="EmpId " />
+                <ScalarProperty Name="MenuName_" ColumnName="MenuName " />
+                <ScalarProperty Name="MenuPrice_" ColumnName="MenuPrice " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Order_">
+              <MappingFragment StoreEntitySet="Order$">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="MenuId_" ColumnName="MenuId " />
+                <ScalarProperty Name="OrderUnit_" ColumnName="OrderUnit " />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderTime_" ColumnName="OrderTime " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Payment_">
+              <MappingFragment StoreEntitySet="Payment$">
+                <ScalarProperty Name="PayId_" ColumnName="PayId " />
+                <ScalarProperty Name="CfOrderId_" ColumnName="CfOrderId " />
+                <ScalarProperty Name="PayDate_" ColumnName="PayDate " />
+                <ScalarProperty Name="PayTime_" ColumnName="PayTime " />
+                <ScalarProperty Name="PayName_" ColumnName="PayName " />
+                <ScalarProperty Name="PayLName_" ColumnName="PayLName " />
+                <ScalarProperty Name="PayAmount_" ColumnName="PayAmount " />
+                <ScalarProperty Name="PayStatus_" ColumnName="PayStatus " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrder_">
+            <EntityTypeMapping TypeName="MycafeDBModel.PurchaseOrder_">
+              <MappingFragment StoreEntitySet="PurchaseOrder$">
+                <ScalarProperty Name="POrderId_" ColumnName="POrderId " />
+                <ScalarProperty Name="QuoId_" ColumnName="QuoId " />
+                <ScalarProperty Name="POrderName_" ColumnName="POrderName " />
+                <ScalarProperty Name="POrderLName_" ColumnName="POrderLName " />
+                <ScalarProperty Name="POrderDate_" ColumnName="POrderDate " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quotation_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Quotation_">
+              <MappingFragment StoreEntitySet="Quotation$">
+                <ScalarProperty Name="QuoId" ColumnName="QuoId" />
+                <ScalarProperty Name="MatId_" ColumnName="MatId " />
+                <ScalarProperty Name="QuoName_" ColumnName="QuoName " />
+                <ScalarProperty Name="QuoLName_" ColumnName="QuoLName " />
+                <ScalarProperty Name="QuoTel_" ColumnName="QuoTel " />
+                <ScalarProperty Name="QuoShopName_" ColumnName="QuoShopName " />
+                <ScalarProperty Name="QuoHnum_" ColumnName="QuoHnum " />
+                <ScalarProperty Name="QuoSoi_" ColumnName="QuoSoi " />
+                <ScalarProperty Name="QuoMoo_" ColumnName="QuoMoo " />
+                <ScalarProperty Name="QuoRoad_" ColumnName="QuoRoad " />
+                <ScalarProperty Name="SareaId" ColumnName="SareaId" />
+                <ScalarProperty Name="DareaId" ColumnName="DareaId" />
+                <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+                <ScalarProperty Name="QuoPostal_" ColumnName="QuoPostal " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receipt_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Receipt_">
+              <MappingFragment StoreEntitySet="Receipt$">
+                <ScalarProperty Name="RecId_" ColumnName="RecId " />
+                <ScalarProperty Name="PayId_" ColumnName="PayId " />
+                <ScalarProperty Name="RecDate_" ColumnName="RecDate " />
+                <ScalarProperty Name="RecName_" ColumnName="RecName " />
+                <ScalarProperty Name="RecLName_" ColumnName="RecLName " />
+                <ScalarProperty Name="RecTime_" ColumnName="RecTime " />
+                <ScalarProperty Name="RecAmount_" ColumnName="RecAmount " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReceiptOrder_">
+            <EntityTypeMapping TypeName="MycafeDBModel.ReceiptOrder_">
+              <MappingFragment StoreEntitySet="ReceiptOrder$">
+                <ScalarProperty Name="ROrderId_" ColumnName="ROrderId " />
+                <ScalarProperty Name="POrderId_" ColumnName="POrderId " />
+                <ScalarProperty Name="ROrderName_" ColumnName="ROrderName " />
+                <ScalarProperty Name="ROrderLName_" ColumnName="ROrderLName " />
+                <ScalarProperty Name="RorderDate_" ColumnName="RorderDate " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Revenue_">
+            <EntityTypeMapping TypeName="MycafeDBModel.Revenue_">
+              <MappingFragment StoreEntitySet="Revenue$">
+                <ScalarProperty Name="RevId_" ColumnName="RevId " />
+                <ScalarProperty Name="RecId_" ColumnName="RecId " />
+                <ScalarProperty Name="RevName_" ColumnName="RevName " />
+                <ScalarProperty Name="RevLName_" ColumnName="RevLName " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MycafeDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeMenu_">
+            <EntityTypeMapping TypeName="MycafeDBModel.TypeMenu_">
+              <MappingFragment StoreEntitySet="TypeMenu$">
+                <ScalarProperty Name="TMenuId_" ColumnName="TMenuId " />
+                <ScalarProperty Name="TMenuName_" ColumnName="TMenuName " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
